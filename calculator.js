@@ -8,11 +8,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "\\index.html");
+  res.sendFile(__dirname + "/index.html");
 })
 
 app.get("/bmicalculator", function(req, res) {
-  res.sendFile(__dirname + "\\bmiCalculator.html");
+  res.sendFile(__dirname + "/bmiCalculator.html");
 })
 
 app.post("/", function(req, res) {
@@ -35,6 +35,6 @@ app.post("/bmicalculator", function(req, res) {
   res.send("Your BMI is " + bmi);
 })
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server is running on port 3000.");
 })
